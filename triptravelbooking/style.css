@@ -1,0 +1,44 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #003366, #006699);
+}
+
+.booking-form-card {
+    max-width: 500px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #003366;
+    font-weight: bold;
+}
+
+.form-label {
+    color: #495057;
+    font-weight: 500;
+}
+
+.form-control {
+    border-color: #ced4da;
+}
+
+.form-control:focus {
+    border-color: #006699;
+    box-shadow: 0 0 0 0.2rem rgba(0, 102, 153, 0.25);
+}
+
+.btn-primary {
+    background-color: #006699;
+    border-color: #006699;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #004d73;
+    border-color: #004d73;
+}

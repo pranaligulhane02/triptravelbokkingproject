@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripVibes Booking Experience</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5a623;
+            --bg-color: #f8f9fa;
+            --dark-color: #333;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0;
+            margin-bottom: 50px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .form-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.1);
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,.2);
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 40px;
+            margin-top: 80px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .footer h5 {
+            color: var(--secondary-color);
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px) rotate(15deg);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .card {
+        transition: all 0.3s ease;
+        animation: fadeInUp 0.5s ease-out;
+        overflow: hidden;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .card-img-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+    .card-img-top {
+        transition: all 0.3s ease;
+    }
+    .card:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    .card-img-overlay {
+        opacity: 0;
+        background: rgba(0,0,0,0.7);
+        transition: all 0.3s ease;
+    }
+    .card:hover .card-img-overlay {
+        opacity: 1;
+    }
+    .section-heading {
+        position: relative;
+        display: inline-block;
+    }
+    .section-heading::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        bottom: -10px;
+        left: 25%;
+        background-color: #007bff;
+        transition: all 0.3s ease;
+    }
+    .section-heading:hover::after {
+        width: 100%;
+        left: 0;
+    }
+    .rating {
+        color: #ffc107;
+    }
+    .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #28a745;
+    }
+    .badge-corner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 70px 70px 0;
+        border-color: transparent #dc3545 transparent transparent;
+    }
+    .badge-text {
+        color: white;
+        position: absolute;
+        top: 15px;
+        right: -35px;
+        transform: rotate(45deg);
+        font-size: 0.8rem;
+    }
+    .about-container {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .feature-box {
+            background-color: #ffffff;
+            border-left: 5px solid #007bff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: #e9ecf0;
+            margin-bottom: 15px;
+        }
+
+        .tripvibes-difference {
+            background-color: #232424;
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tripvibes-difference:hover {
+            transform: translateY(-10px);
+        }
+
+        .difference-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .difference-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .animate-fadeIn { animation: fadeIn 1s ease-out; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TripVibes</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="loginform.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="mb-4">Experience With TripVibes</h1>
+            <p class="mb-5">Seamless reservations for discerning clients. Your journey to exceptional experiences starts here.</p>
+            <a href="register.html" class="btn btn-light btn-lg">Book Now</a>
+        </div>
+    </section>
+
+    <section id="travel-ads" class="py-5 bg-light"></section>
+        <div class="container">
+            <h2 class="text-center mb-5 section-heading">Featured Travel Partners</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 rounded-3">
+                        <div class="card-img-wrapper">
+                            <img src="./swaminarayan.jpg" class="card-img-top" alt="Swaminarayan Travel">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                            <div class="badge-corner">
+                                <span class="badge-text">NEW</span>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Swaminarayan Travel</h5>
+                            <p class="card-text">Experience divine journeys with us.</p>
+                            <div class="rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2">(4.5)</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 rounded-3">
+                        <div class="card-img-wrapper">
+                            <img src="./sairam.jpg" class="card-img-top" alt="Sairam Travel">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Sairam Travel</h5>
+                            <p class="card-text">Your trusted partner for spiritual tours.</p>
+                            <div class="rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ms-2">(4.0)</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 rounded-3">
+                        <div class="card-img-wrapper">
+                            <img src="./chanakya.png" class="card-img-top" alt="Chanakya Travel">
+                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Chanakya Travel</h5>
+                            <p class="card-text">Wisdom in every journey we plan.</p>
+                            <div class="rating mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ms-2">(5.0)</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container about-container animate-fadeIn">
+        <h1 class="text-center mb-5">About TripVibes</h1>
+        
+        <div class="row mb-5">
+            <div class="col-md-6 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-suitcase-rolling"></i>
+                    </div>
+                    <h3>Travel Made Easy</h3>
+                    <p>Experience seamless booking and personalized service for all your travel needs. Our expert team ensures every detail is perfect for a stress-free journey.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Payment</h3>
+                    <p>Enjoy peace of mind with our secure payment system. Your financial information is protected with state-of-the-art encryption technology.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tripvibes-difference">
+            <h2 class="text-center mb-4">Experience the TripVibes Difference</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="difference-item">
+                        <span class="difference-icon">&#10004;</span>
+                        <p>Personalized luxury experiences tailored to your preferences</p>
+                    </div>
+                    <div class="difference-item">
+                        <span class="difference-icon">&#10004;</span>
+                        <p>24/7 concierge service for all your travel needs</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="difference-item">
+                        <span class="difference-icon">&#10004;</span>
+                        <p>Exclusive access to high-end restaurants and events</p>
+                    </div>
+                    <div class="difference-item">
+                        <span class="difference-icon">&#10004;</span>
+                        <p>Seamless booking process with attention to every detail</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+    </div>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="bi bi-envelope me-2"></i> info@tripvibes.com</p>
+                    <p><i class="bi bi-telephone me-2"></i> (123) 456-7890</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white"><i class="bi bi-house me-2"></i>Home</a></li>
+                        <li><a href="loginform.html" class="text-white"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+                        <li><a href="register.html" class="text-white"><i class="bi bi-person-plus me-2"></i>Register</a></li>
+                        <li><a href="#about" class="text-white"><i class="bi bi-info-circle me-2"></i>About Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="me-3" title="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="me-3" title="Like us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="me-3" title="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 TripVibes. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

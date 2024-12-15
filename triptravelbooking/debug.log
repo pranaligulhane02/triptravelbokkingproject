@@ -1,0 +1,43 @@
+[2024-10-18 14:37:37] Script started
+[2024-10-18 14:37:37] Connected successfully to the database
+[2024-10-18 14:37:37] Table 'users' created successfully
+[2024-10-18 14:37:37] POST data received
+[2024-10-18 14:37:37] Received data - Username: pranali, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-18 14:37:37] New record created successfully
+[2024-10-18 14:37:37] Script ended
+[2024-10-18 15:12:20] Script started
+[2024-10-18 15:12:20] Connected successfully to the database
+[2024-10-18 15:12:20] POST data received
+[2024-10-18 15:12:20] Received data - Username: pranali, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-18 15:12:20] New record created successfully
+[2024-10-18 15:12:20] Script ended
+[2024-10-19 05:38:34] Script started
+[2024-10-19 05:38:34] Connected successfully to the database
+[2024-10-19 05:38:34] POST data received
+[2024-10-19 05:38:35] Received data - Username: sayali, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-19 05:38:35] New record created successfully
+[2024-10-19 05:38:35] Script ended
+[2024-10-19 06:04:02] Script started
+[2024-10-19 06:04:02] Connected successfully to the database
+[2024-10-19 06:04:02] POST data received
+[2024-10-19 06:04:02] Received data - Username: sayali, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-19 06:04:02] New record created successfully
+[2024-10-19 06:04:02] Script ended
+[2024-10-19 08:28:39] Script started
+[2024-10-19 08:28:39] Connected successfully to the database
+[2024-10-19 08:28:39] POST data received
+[2024-10-19 08:28:39] Received data - Username: admin, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-19 08:28:40] New record created successfully
+[2024-10-19 08:28:40] Script ended
+[2024-10-19 12:29:01] Script started
+[2024-10-19 12:29:01] Connected successfully to the database
+[2024-10-19 12:29:01] POST data received
+[2024-10-19 12:29:01] Received data - Username: pranali, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-19 12:29:01] New record created successfully
+[2024-10-19 12:29:01] Script ended
+[2024-10-27 11:41:43] Script started
+[2024-10-27 11:41:43] Connected successfully to the database
+[2024-10-27 11:41:43] POST data received
+[2024-10-27 11:41:43] Received data - Username: pranshru, Age: 20, Gender: Female, Phone: 7841874687
+[2024-10-27 11:41:43] New record created successfully
+[2024-10-27 11:41:43] Script ended

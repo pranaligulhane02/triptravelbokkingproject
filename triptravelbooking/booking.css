@@ -1,0 +1,121 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --bg-color: #f8f9fa;
+    --dark-color: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 150px 0;
+    margin-bottom: 50px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.form-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    margin-bottom: 30px;
+}
+
+.form-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 40px;
+    margin-top: 80px;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.footer h5 {
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px) rotate(15deg);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
